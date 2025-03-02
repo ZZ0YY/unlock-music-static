@@ -3,14 +3,12 @@
   "routes": [
     {
       "src": "/service-worker.js",
-      "headers": { "Cache-Control": "no-cache" }
+      "headers": {
+        "Cache-Control": "no-cache"
+      }
     },
     {
-      "src": "/disclaimer",
-      "dest": "/disclaimer.html"
-    },
-    {
-      "src": "/(.*)", 
+      "src": "/(.*)",
       "dest": "/index.html",
       "headers": {
         "Cache-Control": "public, max-age=3600",
