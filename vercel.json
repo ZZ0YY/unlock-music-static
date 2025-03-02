@@ -3,15 +3,17 @@
   "routes": [
     {
       "src": "/service-worker.js",
-      "headers": {
-        "Cache-Control": "no-cache"
-      }
+      "headers": { "Cache-Control": "no-cache" }
+    },
+    {
+      "src": "/(css|js|img|fonts)/.*",
+      "headers": { "Cache-Control": "public, max-age=31536000, immutable" }
     },
     {
       "src": "/(.*)",
       "dest": "/index.html",
       "headers": {
-        "Cache-Control": "public, max-age=3600",
+        "Cache-Control": "no-cache",
         "X-Frame-Options": "DENY"
       }
     }
