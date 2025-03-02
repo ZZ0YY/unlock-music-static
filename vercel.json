@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "routes": [
+    {
+      "src": "/service-worker.js",
+      "headers": { "Cache-Control": "no-cache" }
+    },
+    {
+      "src": "/disclaimer",
+      "dest": "/disclaimer.html"
+    },
+    {
+      "src": "/(.*)", 
+      "dest": "/index.html",
+      "headers": {
+        "Cache-Control": "public, max-age=3600",
+        "X-Frame-Options": "DENY"
+      }
+    }
+  ]
+}
