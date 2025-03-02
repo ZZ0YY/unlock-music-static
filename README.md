@@ -29,11 +29,11 @@
 
 ### 支持的格式
 
-- [x] QQ 音乐 (.qmc0/.qmc2/.qmc3/.qmcflac/.qmcogg/.tkm)
-- [x] Moo 音乐格式 (.bkcmp3/.bkcflac/...)
-- [x] QQ 音乐新格式 (.mflac/.mgg/.mflac0/.mgg1/.mggl)
-- [x] 网易云音乐格式 (.ncm)
-- [x] 酷狗音乐格式 (.kgm/.vpr)  
+- [✔] QQ 音乐 (.qmc0/.qmc2/.qmc3/.qmcflac/.qmcogg/.tkm)
+- [✔] Moo 音乐格式 (.bkcmp3/.bkcflac/...)
+- [✔] QQ 音乐新格式 (.mflac/.mgg/.mflac0/.mgg1/.mggl)
+- [✔] 网易云音乐格式 (.ncm)
+- [✔] 酷狗音乐格式 (.kgm/.vpr)  
   *完整支持列表见[官方文档](https://git.unlock-music.dev/um/web/wiki/支持格式)*
 
 ### 增强特性
