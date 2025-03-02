@@ -79,25 +79,22 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.8);
-        z-index: 10000;
-        opacity: 0;
-        transition: opacity 0.3s ease;
+        background: rgba(0, 0, 0, 0.9);
+        z-index: 9999;
+        justify-content: center;
+        align-items: center;
       }
       .disclaimer-content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         background: #fff;
         padding: 25px;
         border-radius: 10px;
         max-width: 600px;
+        text-align: center;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
       }
       .disclaimer-close {
         margin-top: 15px;
-        padding: 8px 20px;
+        padding: 10px 25px;
         background: #1db1ff;
         color: white;
         border: none;
@@ -107,15 +104,6 @@
       }
       .disclaimer-close:hover {
         background: #0a9dff;
-      }
-      .disclaimer-link {
-        position: fixed;
-        bottom: 15px;
-        right: 15px;
-        z-index: 1000;
-        color: #1db1ff;
-        text-decoration: none;
-        font-size: 14px;
       }
     </style>
 
@@ -155,7 +143,6 @@
     <div id="app"></div>
 
     <!-- 免责声明组件 -->
-    <a href="javascript:void(0)" onclick="showDisclaimer()" class="disclaimer-link">免责声明</a>
     <div id="disclaimer-modal">
         <div class="disclaimer-content">
             <h2>版权声明与免责条款</h2>
@@ -168,15 +155,18 @@
 
     <!-- 控制脚本 -->
     <script>
-      function showDisclaimer() {
-        const modal = document.getElementById('disclaimer-modal');
-        modal.style.display = 'block';
-        setTimeout(() => modal.style.opacity = 1, 10);
-      }
+      // 自动弹出免责声明
+      document.addEventListener('DOMContentLoaded', () => {
+        if (!localStorage.getItem('disclaimerAccepted')) {
+          const modal = document.getElementById('disclaimer-modal');
+          modal.style.display = 'flex';
+        }
+      });
+
+      // 关闭弹窗逻辑
       function closeDisclaimer() {
-        const modal = document.getElementById('disclaimer-modal');
-        modal.style.opacity = 0;
-        setTimeout(() => modal.style.display = 'none', 300);
+        localStorage.setItem('disclaimerAccepted', 'true');
+        document.getElementById('disclaimer-modal').style.display = 'none';
       }
     </script>
 
